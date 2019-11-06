@@ -1,0 +1,20 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+  <view class="foods">
+     <text class="user-motto">{{motto}}</text>   
+  </view>
+    <button type="primary" size="default" bindtap="random" hidden="{{hiddenEat}}">吃啥</button>
+    <button type="warn" size="default" bindtap="stop" hidden="{{hiddenStop}}">停</button>
+    <!-- <button type="primary" size="default">进账</button>
+    <button type="warn" size="default">出账</button> -->
+  </view>
+  
+</view>
